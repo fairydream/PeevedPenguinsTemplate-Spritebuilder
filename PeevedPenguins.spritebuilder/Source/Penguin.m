@@ -16,8 +16,4 @@
     return self;
 }
 
-- (void)play {
-    CCLOG(@"play button pressed");
-}
-
 @end
