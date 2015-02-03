@@ -450,4 +450,9 @@ static const MTLPrimitiveType MetalDrawModes[] = {
 
 @end
 
+- (void)retry {
+    // reload this level
+    [[CCDirector sharedDirector] replaceScene: [CCBReader loadAsScene:@"Gameplay"]];
+}
+
 #endif
