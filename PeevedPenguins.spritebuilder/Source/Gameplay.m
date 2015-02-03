@@ -36,7 +36,7 @@
 }
 
 // called on every touch in this scene
--(void) touchBegan:(CCTouch *)touch withEvent:(UIEvent *)event
+-(void) touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 {
     CGPoint touchLocation = [touch locationInNode:_contentNode];
     
@@ -51,20 +51,20 @@
     }
 }
 
-- (void)touchMoved:(CCTouch *)touch withEvent:(UIEvent *)event
+- (void)touchMoved:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 {
     // whenever touches move, update the position of the mouseJointNode to the touch position
     CGPoint touchLocation = [touch locationInNode:_contentNode];
     _mouseJointNode.position = touchLocation;
 }
 
--(void) touchEnded:(UITouch *)touch withEvent:(UIEvent *)event
+-(void) touchEnded:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 {
     // when touches end, meaning the user releases their finger, release the catapult
     [self releaseCatapult];
 }
 
--(void) touchCancelled:(UITouch *)touch withEvent:(UIEvent *)event
+-(void) touchCancelled:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 {
     // when touches are cancelled, meaning the user drags their finger off the screen or onto something else, release the catapult
     [self releaseCatapult];
